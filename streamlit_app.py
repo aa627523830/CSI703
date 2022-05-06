@@ -27,3 +27,4 @@ with st.echo(code_location='below'):
 
     ax.set_xlabel("Acceleration")
     ax.set_ylabel("Miles per gallon")
+    st.write(fig)
