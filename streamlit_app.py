@@ -9,7 +9,9 @@ df = pd.read_csv('london_merged.csv', parse_dates=True, index_col='timestamp')
 
 st.title("Visualizing correlation, comparisons, and trends")  # add a title
 st.write(df)  # visualize my dataframe in the Streamlit app
-#df[].map(dict(yes=1, no=0))
+df['is_holiday'].map(dict(yes=1, no=0))
+df['is_weekend'].map(dict(yes=1, no=0))
+df['season'].map(dict(Spring=0, Summer=1, Autumn=2, Winter=3))
 
 #with st.echo(code_location='below'):
 
