@@ -21,4 +21,6 @@ st.write(df)  # visualize my dataframe in the Streamlit app
    # st.write(fig)
     
 
-st.bar_chart(df[['is_holiday','is_weekend','season']])
+st.bar_chart(df[['is_holiday']])
+st.bar_chart(df[['is_weekend']])
+st.bar_chart(df[['season']])
