@@ -24,7 +24,7 @@ with st.echo(code_location='below'):
        # df.index.hour,
         #df['cnt'],
     #)
-    ax.sns.pointplot(data=df, x=df.index.hour, y='cnt', hue='is_holiday')#.set(title='Bicycle share usage volumn in holiday and non-holiday')
+    sns.pointplot(ax =ax,data=df, x=df.index.hour, y='cnt', hue='is_holiday')#.set(title='Bicycle share usage volumn in holiday and non-holiday')
     ax.set_xlabel("Day Hour")
     ax.set_ylabel("Bicycle share usage volumn")
     st.write(fig)
