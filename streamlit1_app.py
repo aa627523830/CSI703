@@ -25,6 +25,6 @@ st.write(df)  # visualize my dataframe in the Streamlit app
 #st.line_chart(df_1D.cnt)
 #df_melted = pd.melt(df,id_vars=['date'],var_name='parameter', value_name='value')
 c = alt.Chart(df_1D, title='measure of different elements over time').mark_line().encode(
-     x='cnt', color='parameter')
+     y='cnt', color='parameter')
 
 st.altair_chart(c)
