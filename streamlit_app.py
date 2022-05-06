@@ -19,27 +19,3 @@ with st.echo(code_location='below'):
     ax.set_xlabel("Day Hour")
     ax.set_ylabel("Bicycle share usage volumn")
     st.write(fig)
-
-    
-with st.echo(code_location='below'):
-
-    fig = plt.figure()
-    ax = fig.add_subplot(1,1,1)
-
-    sns.pointplot(data=df, x=df.index.hour, y='cnt', hue='is_weekend')
-    ax.set_title("Bicycle share usage volumn in weekend and non-weekend")
-    ax.set_xlabel("Day Hour")
-    ax.set_ylabel("Bicycle share usage volumn")
-    st.write(fig)
-
-    
-with st.echo(code_location='below'):
-
-    fig = plt.figure()
-    ax = fig.add_subplot(1,1,1)
-
-    sns.pointplot(data=df, x=df.index.hour, y='cnt', hue='season')
-    ax.set_title("Bicycle share usage volumn in different season")
-    ax.set_xlabel("Day Hour")
-    ax.set_ylabel("Bicycle share usage volumn")
-    st.write(fig)
