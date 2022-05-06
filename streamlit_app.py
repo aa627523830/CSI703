@@ -23,8 +23,9 @@ with st.echo(code_location='below'):
     ax.scatter(
         df.index.hour,
         df['cnt'],
+        hue=['is_holiday']
     )
 
-    ax.set_xlabel("Acceleration")
-    ax.set_ylabel("Miles per gallon")
+    ax.set_xlabel("Day Hour")
+    ax.set_ylabel("Bicycle share usage volumn")
     st.write(fig)
