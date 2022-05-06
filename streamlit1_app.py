@@ -21,4 +21,4 @@ st.write(df)  # visualize my dataframe in the Streamlit app
   #  ax.set_ylabel("Bicycle share usage volumn")
   #  st.write(fig)
     
-    st.line_chart(df_1D.cnt)
+st.line_chart(df_1D.cnt)
