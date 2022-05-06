@@ -23,8 +23,8 @@ st.write(df)  # visualize my dataframe in the Streamlit app
   #  st.write(fig)
     
 #st.line_chart(df_1D.cnt)
-#df_melted = pd.melt(df,id_vars=['date'],var_name='parameter', value_name='value')
-c = alt.Chart(df_1D, title='measure of different elements over time').mark_line().encode(
-     y='cnt', color='parameter')
+df_melted = pd.melt(df_1D,id_vars=['cnt'],var_name='parameter', value_name='value')
+c = alt.Chart(df_melted, title='measure of different elements over time').mark_line().encode(
+     x=df_1D.index, y='value', color='parameter')
 
-st.altair_chart(c)
+st.altair_chart(c, use_container_width=True)
