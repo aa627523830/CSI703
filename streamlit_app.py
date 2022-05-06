@@ -11,5 +11,6 @@ st.write(df)  # visualize my dataframe in the Streamlit app
 
 
 #plt.figure(figsize=(10, 4))
+fig, ax = plt.subplots()
 fig = sns.pointplot(data=df, x=df.index.hour, y='cnt', hue='is_holiday')#.set(title='Bicycle share usage volumn in holiday and non-holiday')
 st.pyplot(fig)
