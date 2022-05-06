@@ -4,6 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.graph_objects as go
+from wordcloud import WordCloud
 
 df = pd.read_csv('london_merged.csv', parse_dates=True, index_col='timestamp')
 
@@ -23,6 +24,11 @@ with st.echo(code_location='below'):
     ax.set_xlabel("Day Hour")
     ax.set_ylabel("Bicycle share usage volumn")
     st.write(fig)
+
+
+wc = WordCloud().fit_words({"8am": 3000, "5pm": 3000, "10": 1000})
+
+st.image(wc.to_array())
 
 
 
