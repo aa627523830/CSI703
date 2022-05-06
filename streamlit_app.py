@@ -13,9 +13,6 @@ st.write(df)  # visualize my dataframe in the Streamlit app
 df['is_holiday'].map(dict(yes=1, no=0))
 df['is_weekend'].map(dict(yes=1, no=0))
 df['season'].map(dict(Spring=0, Summer=1, Autumn=2, Winter=3))
-wc = WordCloud().fit_words({"8am": 3, "5pm": 3, "10": 1})
-
-st.image(wc.to_array())
 
 with st.echo(code_location='below'):
 
