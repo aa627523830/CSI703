@@ -4,4 +4,4 @@ streamlit==0.86.0
 altair==4.1.0
 seaborn==0.11.1
 matplotlib==3.3.4
-PIL
+pillow==8.2.0
