@@ -9,6 +9,7 @@ df = pd.read_csv('london_merged.csv', parse_dates=True, index_col='timestamp')
 
 st.title("Visualizing correlation, comparisons, and trends")  # add a title
 st.write(df)  # visualize my dataframe in the Streamlit app
+#df[].map(dict(yes=1, no=0))
 
 #with st.echo(code_location='below'):
 
@@ -42,14 +43,14 @@ fig = go.Figure()
   
 if chart_visual == 'Line Chart':
     if selected_status == 'is_holiday':
-        fig.add_trace(go.Scatter(x = df.cnt, y = df[['is_holiday']],
+        fig.add_trace(go.Scatter(x = df.cnt, y = df['is_holiday'],
                                  mode = 'lines',
                                  name = 'is_holiday'))
     if selected_status == 'is_weekend':
-        fig.add_trace(go.Scatter(x = df.cnt, y = df[['is_weekend']],
+        fig.add_trace(go.Scatter(x = df.cnt, y = df['is_weekend'],
                                  mode = 'lines', name = 'is_weekend'))
     if selected_status == 'season':
-        fig.add_trace(go.Scatter(x = df.cnt, y = df[['season']],
+        fig.add_trace(go.Scatter(x = df.cnt, y = df['season'],
                                  mode = 'lines',
                                  name = 'season'))
 
