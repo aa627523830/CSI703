@@ -3,6 +3,7 @@ import streamlit as st
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
+import altair as alt
 
 df = pd.read_csv('london_merged.csv', parse_dates=True, index_col='timestamp')
 df_1D=df.resample('1D').sum()
@@ -21,4 +22,17 @@ st.write(df)  # visualize my dataframe in the Streamlit app
   #  ax.set_ylabel("Bicycle share usage volumn")
   #  st.write(fig)
     
-st.line_chart(df_1D.cnt)
+#st.line_chart(df_1D.cnt)
+chart = (
+        alt.Chart(
+            data=df_1D.cnt,
+            title="The distribution of bicycle usage over time",
+        )
+        .mark_line()
+        .encode(
+            x=alt.X("capacity 1", axis=alt.Axis(title="Capacity 1")),
+            x=alt.X("capacity 2", axis=alt.Axis(title="Capacity 2")),
+        )
+)
+
+st.altair_chart(chart)
